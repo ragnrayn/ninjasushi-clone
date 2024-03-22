@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from '../../components/header/header.component';
+import { SvgIconComponent } from 'angular-svg-icon';
+import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const homeRouter: Routes = [
@@ -13,8 +16,11 @@ const homeRouter: Routes = [
 @NgModule({
   declarations: [HomeComponent, HeaderComponent],
   imports: [
+    HttpClientModule,
     CommonModule,
+    SvgIconComponent,
     RouterModule.forChild(homeRouter),
+    MatIconModule
   ],
   exports: [HomeComponent],
 })
